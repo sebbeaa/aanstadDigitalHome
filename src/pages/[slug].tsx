@@ -16,7 +16,7 @@ export const getStaticPaths = async () => {
         },
       }
     }),
-    fallback: false,
+    fallback: true,
   }
 }
 
@@ -46,7 +46,7 @@ export default function IndexPage(
       <Head>
         <style>{props.css}</style>
       </Head>
-      <div dangerouslySetInnerHTML={{ __html: props.html }}></div>
+      <div dangerouslySetInnerHTML={{ __html: props.html || '' }}></div>
     </>
   )
 }

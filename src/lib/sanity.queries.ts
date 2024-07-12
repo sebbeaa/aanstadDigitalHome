@@ -13,7 +13,7 @@ export const pagesQuery = groq`*[_type == "page" && defined(slug.current)] | ord
 
 export const homePageQuery = groq`*[_type == "homeDocument"][0]{content}`
 export const settingsQuery = groq`*[_type == "settings"][0]{content}`
-export const pageBySlugQuery = groq`*[_type == "page" && slug.current == $slug][0]{slug}`
+export const pageBySlugQuery = groq`*[_type == "page" && slug.current == $slug][0]`
 
 export const urlForImage = (source: Image | undefined) => {
   // Ensure that source image contains a valid reference
