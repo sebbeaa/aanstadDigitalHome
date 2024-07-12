@@ -1,7 +1,6 @@
 import { InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 
-
 import { getClient } from '~/lib/sanity.client'
 import { getPage, getPages } from '~/lib/sanity.loader'
 import { decryptString } from '~/plugins/crypt/encryption'
@@ -21,11 +20,8 @@ export const getStaticPaths = async () => {
   }
 }
 
-export const getStaticProps = async ({
-  params = { slug: '' },
-}) => {
+export const getStaticProps = async ({ params = { slug: '' } }) => {
   const client = getClient()
-  
 
   const pageData = await getPage(client, params.slug)
 
@@ -35,12 +31,9 @@ export const getStaticProps = async ({
   return {
     props: {
       page: pageData,
-      
       html,
       css,
-      
       slug: params.slug,
-      
     },
   }
 }
@@ -53,7 +46,7 @@ export default function IndexPage(
       <Head>
         <style>{props.css}</style>
       </Head>
-      <div dangerouslySetInnerHTML={{ __html: props.html }}></div>
+      <div dangerouslySetInnerHTML={{ __html: props.html || '' }}></div>
     </>
   )
 }

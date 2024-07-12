@@ -1,7 +1,8 @@
 import { Editor } from 'grapesjs'
-import { CodeEditor } from '../codeEditor/code-editor'
-import { openCodeStr, getObject, getConstructor } from '../codeEditor/vars'
+
 import { encryptString } from '../../crypt/encryption'
+import { CodeEditor } from '../codeEditor/code-editor'
+import { getConstructor,getObject, openCodeStr } from '../codeEditor/vars'
 export const Commands = (editor: Editor, opts: any) => {
   let codeEditor: any = null
 
@@ -25,7 +26,12 @@ export const Commands = (editor: Editor, opts: any) => {
     return CodeEditor
   })
 
-  const handleSaveOrViewCode = async (editor: Editor, name: string, onChange?: any, set?: any) => {
+  const handleSaveOrViewCode = async (
+    editor: Editor,
+    name: string,
+    onChange?: any,
+    set?: any,
+  ) => {
     if (editor) {
       const body = editor.Canvas.getDocument().body
       const event = new Event('change', {
@@ -89,7 +95,8 @@ export const Commands = (editor: Editor, opts: any) => {
           ? el?.classList.replace('fullscreen-zoom-animation', 'de-zoom')
           : el?.classList.add('de-zoom')
         style.transformOrigin = 'center' // Add transform origin of center
-        style.animation = 'zoomAnimation 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);'
+        style.animation =
+          'zoomAnimation 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);'
         style.width = '100%'
         style.marginTop = '0'
         style.height = '535px'

@@ -1,7 +1,7 @@
 import createImageUrlBuilder from '@sanity/image-url'
+import { groq } from 'next-sanity'
 import type { Image } from 'sanity'
 
-import { groq } from 'next-sanity'
 import { dataset, projectId } from './sanity.api'
 
 const imageBuilder = createImageUrlBuilder({
@@ -11,8 +11,8 @@ const imageBuilder = createImageUrlBuilder({
 
 export const pagesQuery = groq`*[_type == "page" && defined(slug.current)] | order(_createdAt desc)`
 
-export const homePageQuery = groq`*[_type == "homeDocument"][0]`
-export const settingsQuery = groq`*[_type == "settings"][0] `
+export const homePageQuery = groq`*[_type == "homeDocument"][0]{content}`
+export const settingsQuery = groq`*[_type == "settings"][0]{content}`
 export const pageBySlugQuery = groq`*[_type == "page" && slug.current == $slug][0]`
 
 export const urlForImage = (source: Image | undefined) => {

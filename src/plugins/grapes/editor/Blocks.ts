@@ -1,8 +1,9 @@
-import { Editor } from 'grapesjs'
-import { TailWindBlogComponents } from '../components/tailwindBlog'
-import { client } from '../api'
 import ImageUrlBuilder from '@sanity/image-url'
+import { Editor } from 'grapesjs'
+
 import { decryptString } from '../../crypt/encryption'
+import { client } from '../api'
+import { TailWindBlogComponents } from '../components/tailwindBlog'
 
 export const blocks = async (editor: Editor) => {
   if (!editor) return

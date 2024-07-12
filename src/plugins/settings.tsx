@@ -1,8 +1,8 @@
+import { CogIcon } from '@sanity/icons'
 import { type DocumentDefinition } from 'sanity'
 import { type StructureResolver } from 'sanity/structure'
+
 import MyEditor from './grapes'
-import { CogIcon } from '@sanity/icons'
-import { list } from 'postcss'
 
 export const singletonPlugin = (types: string[]) => {
   return {

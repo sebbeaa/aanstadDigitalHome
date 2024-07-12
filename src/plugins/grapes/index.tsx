@@ -12,13 +12,13 @@ import parserPostCSS from 'grapesjs-parser-postcss'
 import { blocks } from './editor/Blocks'
 import { panels } from './editor/Panels'
 
-import CodeEditor from './codeEditor/index'
 import { set } from 'sanity'
 import { decryptString, encryptString } from '../crypt/encryption'
+import CodeEditor from './codeEditor/index'
 
-import fetchImagesFromSanity from './editor/Images'
 import { SanityDocument } from '@sanity/client'
 import forms from 'grapesjs-plugin-forms'
+import fetchImagesFromSanity from './editor/Images'
 
 
 const Grapes: React.FC<SanityDocument> = (props: SanityDocument) => {
@@ -61,7 +61,6 @@ const Grapes: React.FC<SanityDocument> = (props: SanityDocument) => {
       fromElement: true,
       storageManager: false,
       plugins: [
-        
         blocks,
         panels,
         CodeEditor,
