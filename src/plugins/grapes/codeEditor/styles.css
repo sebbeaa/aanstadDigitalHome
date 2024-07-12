@@ -1,0 +1,88 @@
+/* Class names prefixes */
+:root {
+  --prefix: 'gjs-';
+}
+
+.code-panel {
+  text-align: left;
+  font-size: 1rem;
+  height: 100%;
+  overflow: hidden;
+}
+
+´ .code-panel section {
+  height: 50%;
+}
+
+.code-panel section .codepanel-separator {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+}
+
+.code-panel section .codepanel-label {
+  margin-top: 5px;
+  line-height: 20px;
+  font-size: 13px;
+  color: #aaa;
+
+  -webkit-user-select: none;
+  user-select: none;
+  text-transform: uppercase;
+}
+
+.cp-btn-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.cp-btn-container .gjs-btn-prim {
+  margin: 2.5px;
+}
+
+.gutter {
+  cursor: ns-resize;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.gutter:after {
+  content: '';
+  display: block;
+  height: 8px;
+  width: 100%;
+  position: absolute;
+  top: -3px;
+}
+
+.pn-commands {
+  overflow: scroll;
+}
+
+.CodeMirror {
+  text-align: left;
+  justify-tracks: left;
+  z-index: 0;
+}
+
+.pn-views-container {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: scroll;
+  scroll-snap-type: none;
+  scroll-behavior: smooth;
+}
+
+.pn-views-container,
+.cv-canvas {
+  transition: width 0.3s ease-in-out;
+}
+
+::-webkit-scrollbar {
+  height: 0px;
+}
+
+.panels {
+  width: 0;
+}
