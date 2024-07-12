@@ -1,6 +1,6 @@
 import { DocumentIcon } from '@sanity/icons'
+import { MdProductionQuantityLimits } from 'react-icons/md'
 import { defineField, defineType } from 'sanity'
-import { MdProductionQuantityLimits } from "react-icons/md";
 export default defineType({
   type: 'document',
   name: 'prod',

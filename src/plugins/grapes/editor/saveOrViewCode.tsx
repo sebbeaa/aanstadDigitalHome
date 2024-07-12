@@ -1,7 +1,13 @@
 import { Editor } from 'grapesjs'
+
 import { encryptString } from '../../crypt/encryption'
 
-const handleSaveOrViewCode = async (editor: Editor, name: string, onChange: any, set: any) => {
+const handleSaveOrViewCode = async (
+  editor: Editor,
+  name: string,
+  onChange: any,
+  set: any,
+) => {
   if (editor) {
     const body = editor.Canvas.getDocument().body
     const event = new Event('change', {

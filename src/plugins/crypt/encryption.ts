@@ -1,5 +1,6 @@
-import { Editor } from 'grapesjs'
 import CryptoJS from 'crypto-js'
+import { Editor } from 'grapesjs'
+
 import { client } from '../../plugins/grapes/api'
 
 const secretKey: string = 'your-super-secret-key'
@@ -10,7 +11,9 @@ export async function encryptString(data: string): Promise<string> {
 }
 
 export async function decryptString(encryptedData: string): Promise<string> {
-  const decrypted = CryptoJS.AES.decrypt(encryptedData, secretKey).toString(CryptoJS.enc.Utf8)
+  const decrypted = CryptoJS.AES.decrypt(encryptedData, secretKey).toString(
+    CryptoJS.enc.Utf8,
+  )
   return decrypted
 }
 
@@ -20,7 +23,9 @@ const sanityEncryptedStoragePlugin = (editor: Editor, options: any = {}) => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader()
       reader.onload = (event) => {
-        const wordArray = CryptoJS.lib.WordArray.create(event?.target?.result as ArrayBuffer)
+        const wordArray = CryptoJS.lib.WordArray.create(
+          event?.target?.result as ArrayBuffer,
+        )
         const encrypted = CryptoJS.AES.encrypt(wordArray, secretKey).toString()
         resolve(encrypted)
       }
@@ -29,7 +34,10 @@ const sanityEncryptedStoragePlugin = (editor: Editor, options: any = {}) => {
     })
   }
 
-  async function uploadToSanity(encryptedData: string, filename: string): Promise<string> {
+  async function uploadToSanity(
+    encryptedData: string,
+    filename: string,
+  ): Promise<string> {
     const document = {
       _type: 'file',
       title: filename,
@@ -67,7 +75,9 @@ const sanityEncryptedStoragePlugin = (editor: Editor, options: any = {}) => {
       const reader = new FileReader()
       return new Promise((resolve, reject) => {
         reader.onload = (event: any) => {
-          const wordArray = CryptoJS.lib.WordArray.create(event.target.result as ArrayBuffer)
+          const wordArray = CryptoJS.lib.WordArray.create(
+            event.target.result as ArrayBuffer,
+          )
           const decrypted = CryptoJS.AES.decrypt(wordArray as any, secretKey)
           const decryptedString = decrypted.toString(CryptoJS.enc.Utf8)
           resolve(decryptedString)

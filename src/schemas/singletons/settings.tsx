@@ -1,8 +1,9 @@
 import { CogIcon } from '@sanity/icons'
-import { defineField, defineType, set } from 'sanity'
-import Grapes from '../../plugins/grapes'
-import React from 'react'
 import { Button, Text, TextInput } from '@sanity/ui'
+import React from 'react'
+import { defineField, defineType, set } from 'sanity'
+
+import Grapes from '../../plugins/grapes'
 
 interface PasswordGeneratorProps {
   length: number

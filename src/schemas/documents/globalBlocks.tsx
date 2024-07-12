@@ -1,8 +1,6 @@
 import { BlockElementIcon } from '@sanity/icons'
 import { defineField, defineType } from 'sanity'
 
-import Grapes from '../../plugins/grapes'
-
 // schemas/singletons/globalBlocks.ts
 
 export default defineType({

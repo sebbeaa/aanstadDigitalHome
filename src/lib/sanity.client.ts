@@ -1,4 +1,3 @@
-
 import { createClient, type SanityClient } from 'next-sanity'
 
 import { apiVersion, dataset, projectId, useCdn } from '~/lib/sanity.api'
