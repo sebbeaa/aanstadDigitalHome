@@ -54,7 +54,6 @@ class MyApp extends App {
       headerAndFooterCss,
       router,
     } = this.props
-    const { slug } = router.query
 
     // Check if the slug is equal to "/studio"
     const showLayout = !router.asPath.includes('/studio')

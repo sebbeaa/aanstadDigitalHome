@@ -61,7 +61,6 @@ const Grapes: React.FC<SanityDocument> = (props: SanityDocument) => {
       fromElement: true,
       storageManager: false,
       plugins: [
-        
         blocks,
         panels,
         CodeEditor,
