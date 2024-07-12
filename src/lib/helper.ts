@@ -1,4 +1,4 @@
-import { load } from "cheerio"
+import { load } from 'cheerio'
 
 export function extractHeaderAndFooter(html: string) {
   const $ = load(html)

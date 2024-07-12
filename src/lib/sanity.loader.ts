@@ -1,16 +1,17 @@
 //@ts-ignore
 
 import * as queryStore from '@sanity/react-loader'
-import { getClient } from './sanity.client'
+import { groq,SanityClient } from 'next-sanity'
+
+import isServer from './isServer'
 import { readToken } from './sanity.api'
+import { getClient } from './sanity.client'
 import {
   homePageQuery,
   pageBySlugQuery,
   pagesQuery,
   settingsQuery,
 } from './sanity.queries'
-import { SanityClient, groq } from 'next-sanity'
-import isServer from './isServer'
 
 let serverClient: SanityClient
 

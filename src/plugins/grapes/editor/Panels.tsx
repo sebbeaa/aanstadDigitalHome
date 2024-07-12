@@ -16,7 +16,6 @@ export const panels = (editor: Editor) => {
     {
       id: 'fullscreen',
       togglable: true,
-      
     },
   ])
 
