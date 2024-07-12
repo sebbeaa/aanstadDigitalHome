@@ -1,0 +1,14 @@
+{
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "framework": "nextjs",
+  "installCommand": "npm i",
+  "images": {
+    "domains": ["cdn.sanity.io"],
+    "sizes": [256, 640, 1080, 2048, 3840],
+    "minimumCacheTTL": 60,
+    "formats": ["image/webp"],
+    "dangerouslyAllowSVG": false,
+    "contentSecurityPolicy": "script-src 'none'; frame-src 'none'; sandbox;"
+  }
+}
