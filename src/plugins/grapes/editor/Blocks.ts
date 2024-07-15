@@ -120,23 +120,7 @@ export const blocks = async (editor: Editor) => {
 
   editor.on('load', async () => {
     if (client) {
-      await client.fetch('*[_type == "globalBlocks"]').then((blocks: any) => {
-        // Initialize your GrapesJS editor here
-        // and load the blocks into the editor
-        if (!blocks) return
-        if (blocks.length === 0) return
-        blocks.forEach(async (block: any) => {
-          const css = await decryptString(block.content.css)
-          const html = await decryptString(block.content.html)
-          const content = `{<style>${css}<style>}` + html
-          if (!block.content) return
-          editor.BlockManager.add(block.id, {
-            label: 'Global Block - ' + block.title,
-            content,
-            category: 'Global Blocks',
-          })
-        })
-      })
+   
 
       await client.fetch('*[_type == "prod"]').then((res) => {
         if (!res) return
