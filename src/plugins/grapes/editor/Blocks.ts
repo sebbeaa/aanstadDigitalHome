@@ -128,7 +128,7 @@ export const blocks = async (editor: Editor) => {
         blocks.forEach(async (block: any) => {
           const css = await decryptString(block.content.css)
           const html = await decryptString(block.content.html)
-          const content = css + html
+          const content = `{<style>${css}<style>}` + html
           if (!block.content) return
           editor.BlockManager.add(block.id, {
             label: 'Global Block - ' + block.title,
