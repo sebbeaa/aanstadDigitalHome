@@ -126,10 +126,13 @@ export const blocks = async (editor: Editor) => {
         if (!blocks) return
         if (blocks.length === 0) return
         blocks.forEach(async (block: any) => {
+          const css = await decryptString(block.content.css)
+          const html = await decryptString(block.content.html)
+          const content = css + html
           if (!block.content) return
           editor.BlockManager.add(block.id, {
             label: 'Global Block - ' + block.title,
-            content: await decryptString(block.content.html),
+            content,
             category: 'Global Blocks',
           })
         })
