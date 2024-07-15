@@ -72,38 +72,36 @@ export const blocks = async (editor: Editor) => {
               <a class="text-gray-800 font-bold text-xl" href="#">Your Brand</a>
             </div>
             <div class="hidden md:flex">
-              <a class="text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium" href="#">Home</a>
-              <a class="text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium" href="#">About</a>
-              <a class="text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium" href="#">Services</a>
-              <a class="text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium" href="#">Contact</a>
+              <a class="text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium" href="/home">Home</a>
+              <a class="text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium" href="/about">About</a>
+              <a class="text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"href="/services">Services</a>
+              <a class="text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium" href="/contact">Contact</a>
             </div>
             <div class="md:hidden">
-              <button class="block hamburger text-gray-800 focus:outline-none">
-                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
+              <button class="block text-gray-800 focus:outline-none" id="menu-button">
+                Menu
               </button>
             </div>
           </div>
         </div>
         <div class="hidden transition-all md:hidden mobile-menu w-full h-full">
          <div w-full grid grid-cols-1 gap-4>
-          <a class="block text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium" href="#">Home</a>
-          <a class="block text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium" href="#">About</a>
-          <a class="block text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium" href="#">Services</a>
-          <a class="block text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium" href="#">Contact</a>
+         <a class="block text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium" href="/home">Home</a>
+         <a class="block text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium" href="/about">About</a>
+          <a class="block text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium" href="/services">Services</a>
+          <a class="block text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium" href="/contact">Contact</a>
           </div>
         </div>
       </nav>
        <script>
         document.addEventListener('DOMContentLoaded', function () {
-  const hamburger = document.querySelector('.hamburger');
-  const mobileMenu = document.querySelector('.mobile-menu');
+          const menuButton = document.getElementById('menu-button');
+          const mobileMenu = document.querySelector('.mobile-menu');
 
-  hamburger.addEventListener('click', function () {
-    mobileMenu.classList.toggle('hidden');
-  });
-});
+          menuButton.addEventListener('click', function () {
+            mobileMenu.classList.toggle('hidden');
+          });
+        });
         </script>
       </header>
     `,
