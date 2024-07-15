@@ -86,8 +86,7 @@ class MyApp extends App {
 
     const transformedHeaderHtml: any = transformHtml(headerHtml)
     const transformedFooterHtml: any = transformHtml(footerHtml)
-    console.log('transformedHeaderHtml', transformedHeaderHtml)
-    console.log('scriptHtml', scriptHtml)
+    
     return (
       <>
         {showLayout && (
