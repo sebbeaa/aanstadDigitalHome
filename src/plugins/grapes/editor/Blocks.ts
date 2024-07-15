@@ -78,9 +78,7 @@ export const blocks = async (editor: Editor) => {
               <a class="text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium" href="/contact">Contact</a>
             </div>
             <div class="md:hidden">
-              <button class="block text-gray-800 focus:outline-none" id="menu-button">
-                Menu
-              </button>
+             <button id="menu-button" class="block" data-gjs-type="button" draggable="true" type="button" autocomplete="off" class="flex text-white bg-fuchsia-800 border-0 focus:outline-none hover:bg-indigo-600 rounded px-2">Menu</button>
             </div>
           </div>
         </div>
