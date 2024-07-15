@@ -41,6 +41,43 @@ export const blocks = async (editor: Editor) => {
     //   '<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 2H4a2 2 0 00-2 2v16a2 2 0 002 2h16a2 2 0 002-2V4a2 2 0 00-2-2zm-1 17h-5v-2h5v2zm0-4h-5v-2h5v2zm0-4h-5V9h5v2zm-8 8H4v-2h7v2zm0-4H4v-2h7v2zm0-4H4V9h7v2zm-4-6h2v2h-2V5zm4 0h2v2h-2V5zm4 0h2v2h-2V5zm0 4h2v2h-2V9zm0 4h2v2h-2v-2zm0 4h2v2h-2v-2zm-4-8h2v2h-2V9zm0 4h2v2h-2v-2zm0 4h2v2h-2v-2zm0 4h2v2h-2v-2z"/></svg>',
   })
 
+  editor.Blocks.add('nav', {
+    label: 'Nav',
+    content: `
+    <header>
+      <nav>
+            <div class="logo">Logo</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Services</a>
+                    <div class="dropdown-content">
+                        <a href="#">Service 1</a>
+                        <a href="#">Service 2</a>
+                        <a href="#">Service 3</a>
+                    </div>
+                </li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </div>
+        </nav>
+        </header>
+        <style>
+        
+        </style>
+       
+        `,
+    category: 'Basic',
+
+  })
+
   editor.Blocks.add('button-block', {
     label: 'Button',
     content: `
@@ -60,6 +97,55 @@ export const blocks = async (editor: Editor) => {
 
         `,
   })
+
+  editor.BlockManager.add('responsive-nav', {
+    label: 'Responsive Navbar',
+    content: `
+    <header>
+      <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4">
+          <div class="flex items-center justify-between h-16">
+            <div class="flex items-center">
+              <a class="text-gray-800 font-bold text-xl" href="#">Your Brand</a>
+            </div>
+            <div class="hidden md:flex">
+              <a class="text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium" href="#">Home</a>
+              <a class="text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium" href="#">About</a>
+              <a class="text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium" href="#">Services</a>
+              <a class="text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium" href="#">Contact</a>
+            </div>
+            <div class="md:hidden">
+              <button class="block hamburger text-gray-800 focus:outline-none">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="hidden md:hidden mobile-menu">
+          <a class="block text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium" href="#">Home</a>
+          <a class="block text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium" href="#">About</a>
+          <a class="block text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium" href="#">Services</a>
+          <a class="block text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium" href="#">Contact</a>
+        </div>
+      </nav>
+       <script>
+        document.addEventListener('DOMContentLoaded', function () {
+  const hamburger = document.querySelector('.hamburger');
+  const mobileMenu = document.querySelector('.mobile-menu');
+
+  hamburger.addEventListener('click', function () {
+    mobileMenu.classList.toggle('hidden');
+  });
+});
+        </script>
+      </header>
+    `,
+    category: 'Navigation',
+  });
+
+  
 
   TailWindBlogComponents.forEach((component) => {
     editor.BlockManager.add(component.id, {

@@ -11,6 +11,7 @@ import { getSettings } from '~/lib/sanity.loader'
 import { decryptString } from '~/plugins/crypt/encryption'
 
 import Layout from '../components/Layout'
+import Script from 'next/script'
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -31,13 +32,14 @@ class MyApp extends App {
       const headerAndFooterHtml = await decryptString(
         settings?.content.html || '',
       )
-      const { headerHtml, footerHtml } =
+      const { headerHtml, footerHtml, scriptHtml } =
         extractHeaderAndFooter(headerAndFooterHtml)
 
       return {
         pageProps,
         headerHtml,
         footerHtml,
+        scriptHtml,
         headerAndFooterCss,
       }
     }
@@ -51,6 +53,7 @@ class MyApp extends App {
       pageProps,
       headerHtml,
       footerHtml,
+      scriptHtml,
       headerAndFooterCss,
       router,
     } = this.props
@@ -83,7 +86,8 @@ class MyApp extends App {
 
     const transformedHeaderHtml: any = transformHtml(headerHtml)
     const transformedFooterHtml: any = transformHtml(footerHtml)
-
+    console.log('transformedHeaderHtml', transformedHeaderHtml)
+    console.log('scriptHtml', scriptHtml)
     return (
       <>
         {showLayout && (
@@ -93,6 +97,9 @@ class MyApp extends App {
             css={headerAndFooterCss}
           >
             <Component {...pageProps} />
+            <Script id='dropdown' strategy="afterInteractive">
+              {`${scriptHtml}`}
+            </Script>
           </Layout>
         )}
         {!showLayout && <Component {...pageProps} />}
