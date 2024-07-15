@@ -7,7 +7,7 @@ import React from 'react'
 const Layout = ({ children, headerHtml, footerHtml, css }) => {
     
   return (
-    <>
+    <div className='w-screen'>
       <Head>
         <style>{`${css}`}</style>      
       </Head>
@@ -15,7 +15,7 @@ const Layout = ({ children, headerHtml, footerHtml, css }) => {
       
       <main>{children}</main>
           <div dangerouslySetInnerHTML={{ __html: footerHtml }} />
-    </>
+    </div>
   )
 }
 

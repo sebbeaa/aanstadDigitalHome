@@ -64,10 +64,10 @@ export const blocks = async (editor: Editor) => {
   editor.BlockManager.add('responsive-nav', {
     label: 'Responsive Navbar',
     content: `
-    <header>
+    <header class="w-dvw min-w-full max-w-full">
       <nav class="bg-white shadow-md flex flex-col">
         <div class="container mx-auto px-4">
-          <div class="flex items-center justify-between h-16">
+          <div class="flex w-full items-center justify-between h-16">
             <div class="flex items-center">
               <a class="text-gray-800 font-bold text-xl" href="#">Your Brand</a>
             </div>
