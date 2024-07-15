@@ -69,10 +69,10 @@ export const blocks = async (editor: Editor) => {
         <div class="container mx-auto px-4">
           <div class="flex w-full items-center justify-between h-16">
             <div class="flex items-center">
-              <a class="text-gray-800 font-bold text-xl" href="#">Your Brand</a>
+              <a class="text-gray-800 font-bold text-xl" href="/">Aanstad Digital</a>
             </div>
             <div class="hidden md:flex">
-              <a class="text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium" href="/home">Home</a>
+              <a class="text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium" href="/">Home</a>
               <a class="text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium" href="/about">About</a>
               <a class="text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"href="/services">Services</a>
               <a class="text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium" href="/contact">Contact</a>
@@ -86,7 +86,7 @@ export const blocks = async (editor: Editor) => {
         </div>
         <div class="hidden transition-all md:hidden mobile-menu w-full h-full">
          <div w-full grid grid-cols-1 gap-4>
-         <a class="block text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium" href="/home">Home</a>
+         <a class="block text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium" href="/">Home</a>
          <a class="block text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium" href="/about">About</a>
           <a class="block text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium" href="/services">Services</a>
           <a class="block text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium" href="/contact">Contact</a>
