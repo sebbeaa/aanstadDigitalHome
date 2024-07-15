@@ -9,8 +9,7 @@ export const token = process.env.SANITY_API_WRITE_TOKEN
 export const client = createClient({
   projectId,
   dataset,
-
+  perspective: 'published',
   apiVersion: '2024-01-29',
   useCdn: false, // `false` if you want fresh data
-  token,
 })
